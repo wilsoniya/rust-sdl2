@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Axis",""],["Button",""],["MappingStatus","Possible return values for `add_mapping`"]],"struct":[["GameController","Wrapper around the SDL_GameController object"]]});

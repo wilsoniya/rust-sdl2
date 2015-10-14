@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Rect` struct in crate `sdl2`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Rect">
+
+    <title>sdl2::rect::Rect - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='../index.html'>sdl2</a>::<wbr><a href='index.html'>rect</a></p><script>window.sidebarCurrent = {name: 'Rect', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>sdl2</a>::<wbr><a href='index.html'>rect</a>::<wbr><a class='struct' href=''>Rect</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-42514' class='srclink' href='../../src/sdl2/rect.rs.html#73-75' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Rect {
+    // some fields omitted
+}</pre><div class='docblock'><p>Immutable rectangle type, consisting of x, y, width and height.</p>
+
+<p>Rectangle invariants:</p>
+
+<ul>
+<li><code>width</code> and <code>height</code> are positive and non-zero.</li>
+<li><code>width</code> and <code>height</code> are less than <code>1&lt;&lt;31</code> (2,147,483,648).</li>
+<li><code>x + width</code> and <code>y + height</code> do not overflow.</li>
+</ul>
+
+<p>These invariants exist in the wrapper because many SDL functions that accept rectangles don&#39;t
+behave predictably if the above conditions aren&#39;t met.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a></code></h3><div class='impl-items'><h4 id='method.raw' class='method'><code>fn <a href='#method.raw' class='fnname'>raw</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const <a class='struct' href='../../sdl2_sys/rect/struct.SDL_Rect.html' title='sdl2_sys::rect::SDL_Rect'>SDL_Rect</a></a></code></h4>
+<h4 id='method.raw_from_option' class='method'><code>fn <a href='#method.raw_from_option' class='fnname'>raw_from_option</a>(v: <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>&gt;) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const <a class='struct' href='../../sdl2_sys/rect/struct.SDL_Rect.html' title='sdl2_sys::rect::SDL_Rect'>SDL_Rect</a></a></code></h4>
+<h4 id='method.raw_mut_from_option' class='method'><code>fn <a href='#method.raw_mut_from_option' class='fnname'>raw_mut_from_option</a>(v: <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;mut <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>&gt;) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='struct' href='../../sdl2_sys/rect/struct.SDL_Rect.html' title='sdl2_sys::rect::SDL_Rect'>SDL_Rect</a></a></code></h4>
+<h4 id='method.raw_slice' class='method'><code>fn <a href='#method.raw_slice' class='fnname'>raw_slice</a>(slice: <a href='http://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a><a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a><a href='http://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const <a class='struct' href='../../sdl2_sys/rect/struct.SDL_Rect.html' title='sdl2_sys::rect::SDL_Rect'>SDL_Rect</a></a></code></h4>
+<h4 id='method.from_ll' class='method'><code>fn <a href='#method.from_ll' class='fnname'>from_ll</a>(raw: <a class='struct' href='../../sdl2_sys/rect/struct.SDL_Rect.html' title='sdl2_sys::rect::SDL_Rect'>SDL_Rect</a>) -&gt; <a class='type' href='../../sdl2/type.SdlResult.html' title='sdl2::SdlResult'>SdlResult</a>&lt;<a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>&gt;&gt;</code></h4>
+<h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(x: <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>, y: <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>, width: <a href='http://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, height: <a href='http://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>) -&gt; <a class='type' href='../../sdl2/type.SdlResult.html' title='sdl2::SdlResult'>SdlResult</a>&lt;<a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>&gt;&gt;</code></h4>
+<div class='docblock'><p>Creates a new rectangle.</p>
+
+<p>If <code>width</code> or <code>height</code> is zero, <code>Ok(None)</code> is returned.
+If the arguments violate any of the other rectangle invariants, an error is returned.</p>
+</div><h4 id='method.new_unwrap' class='method'><code>fn <a href='#method.new_unwrap' class='fnname'>new_unwrap</a>(x: <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>, y: <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>, width: <a href='http://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, height: <a href='http://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>) -&gt; <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a></code></h4>
+<div class='docblock'><p>Creates a new rectangle. Convenience function that unwraps the result of <code>Rect::new()</code> twice.</p>
+
+<p>Make sure to only use this function if you&#39;re certain the rectangle meets all the invariants.</p>
+</div><h4 id='method.offset' class='method'><code>fn <a href='#method.offset' class='fnname'>offset</a>(&amp;self, x: <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>, y: <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>) -&gt; <a class='type' href='../../sdl2/type.SdlResult.html' title='sdl2::SdlResult'>SdlResult</a>&lt;<a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>&gt;</code></h4>
+<div class='docblock'><p>Offsets the rectangle&#39;s x and y coordinates.</p>
+
+<p>If the new rectangle violates any invariants, an error is returned.</p>
+</div><h4 id='method.xywh' class='method'><code>fn <a href='#method.xywh' class='fnname'>xywh</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>, <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>, <a href='http://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, <a href='http://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>)</a></code></h4>
+<h4 id='method.x' class='method'><code>fn <a href='#method.x' class='fnname'>x</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code></h4>
+<h4 id='method.y' class='method'><code>fn <a href='#method.y' class='fnname'>y</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code></h4>
+<h4 id='method.width' class='method'><code>fn <a href='#method.width' class='fnname'>width</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></h4>
+<h4 id='method.height' class='method'><code>fn <a href='#method.height' class='fnname'>height</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></h4>
+<h4 id='method.from_enclose_points' class='method'><code>fn <a href='#method.from_enclose_points' class='fnname'>from_enclose_points</a>(points: <a href='http://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a><a class='struct' href='../../sdl2/rect/struct.Point.html' title='sdl2::rect::Point'>Point</a><a href='http://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>, clip: <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>&gt;) -&gt; <a class='type' href='../../sdl2/type.SdlResult.html' title='sdl2::SdlResult'>SdlResult</a>&lt;<a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>&gt;&gt;</code></h4>
+<div class='docblock'><p>Calculate a minimal rectangle enclosing a set of points.</p>
+
+<p>Returns <code>Ok(None)</code> if there are no points, or no points within the clipping rectangle.
+Returns an error if the resulting rectangle&#39;s dimensions are too large for the points.</p>
+</div><h4 id='method.has_intersection' class='method'><code>fn <a href='#method.has_intersection' class='fnname'>has_intersection</a>(&amp;self, other: &amp;<a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Determine whether two rectangles intersect.</p>
+</div><h4 id='method.intersect' class='method'><code>fn <a href='#method.intersect' class='fnname'>intersect</a>(&amp;self, other: &amp;<a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>&gt;</code></h4>
+<div class='docblock'><p>Calculate the intersection of two rectangles. The bitwise AND operator <code>&amp;</code> can also be used.</p>
+</div><h4 id='method.union' class='method'><code>fn <a href='#method.union' class='fnname'>union</a>(&amp;self, other: &amp;<a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>) -&gt; <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a></code></h4>
+<div class='docblock'><p>Calculate the union of two rectangles. The bitwise OR operator <code>|</code> can also be used.</p>
+</div><h4 id='method.intersect_line' class='method'><code>fn <a href='#method.intersect_line' class='fnname'>intersect_line</a>(&amp;self, start: <a class='struct' href='../../sdl2/rect/struct.Point.html' title='sdl2::rect::Point'>Point</a>, end: <a class='struct' href='../../sdl2/rect/struct.Point.html' title='sdl2::rect::Point'>Point</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(<a class='struct' href='../../sdl2/rect/struct.Point.html' title='sdl2::rect::Point'>Point</a>, <a class='struct' href='../../sdl2/rect/struct.Point.html' title='sdl2::rect::Point'>Point</a>)</a>&gt;</code></h4>
+<div class='docblock'><p>Calculate the intersection of a rectangle and line segment. return points of intersection.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/convert/trait.Into.html' title='core::convert::Into'>Into</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>, <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>, <a href='http://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, <a href='http://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>)</a>&gt; for <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a></code></h3><div class='impl-items'><h4 id='method.into' class='method'><code>fn <a href='http://doc.rust-lang.org/nightly/core/convert/trait.Into.html#method.into' class='fnname'>into</a>(self) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>, <a href='http://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>, <a href='http://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, <a href='http://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>)</a></code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/ops/trait.BitAnd.html' title='core::ops::BitAnd'>BitAnd</a>&lt;<a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>&gt; for <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a></code></h3><div class='docblock'><p>Intersect</p>
+</div><div class='impl-items'><h4 id='assoc_type.Output' class='type'><code>type Output = <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>&gt;</code></h4>
+<h4 id='method.bitand' class='method'><code>fn <a href='http://doc.rust-lang.org/nightly/core/ops/trait.BitAnd.html#method.bitand' class='fnname'>bitand</a>(self, rhs: <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>&gt;</code></h4>
+</div><h3 class='impl'><code>impl&lt;'a&gt; <a class='trait' href='http://doc.rust-lang.org/nightly/core/ops/trait.BitAnd.html' title='core::ops::BitAnd'>BitAnd</a>&lt;&amp;'a <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>&gt; for <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a></code></h3><div class='docblock'><p>Intersect</p>
+</div><div class='impl-items'><h4 id='assoc_type.Output' class='type'><code>type Output = <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>&gt;</code></h4>
+<h4 id='method.bitand' class='method'><code>fn <a href='http://doc.rust-lang.org/nightly/core/ops/trait.BitAnd.html#method.bitand' class='fnname'>bitand</a>(self, rhs: &amp;<a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>&gt;</code></h4>
+</div><h3 class='impl'><code>impl&lt;'a&gt; <a class='trait' href='http://doc.rust-lang.org/nightly/core/ops/trait.BitAnd.html' title='core::ops::BitAnd'>BitAnd</a>&lt;<a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>&gt; for &amp;'a <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a></code></h3><div class='docblock'><p>Intersect</p>
+</div><div class='impl-items'><h4 id='assoc_type.Output' class='type'><code>type Output = <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>&gt;</code></h4>
+<h4 id='method.bitand' class='method'><code>fn <a href='http://doc.rust-lang.org/nightly/core/ops/trait.BitAnd.html#method.bitand' class='fnname'>bitand</a>(self, rhs: <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>&gt;</code></h4>
+</div><h3 class='impl'><code>impl&lt;'a&gt; <a class='trait' href='http://doc.rust-lang.org/nightly/core/ops/trait.BitAnd.html' title='core::ops::BitAnd'>BitAnd</a>&lt;&amp;'a <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>&gt; for &amp;'a <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a></code></h3><div class='docblock'><p>Intersect</p>
+</div><div class='impl-items'><h4 id='assoc_type.Output' class='type'><code>type Output = <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>&gt;</code></h4>
+<h4 id='method.bitand' class='method'><code>fn <a href='http://doc.rust-lang.org/nightly/core/ops/trait.BitAnd.html#method.bitand' class='fnname'>bitand</a>(self, rhs: &amp;<a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>&gt;</code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/ops/trait.BitOr.html' title='core::ops::BitOr'>BitOr</a>&lt;<a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>&gt; for <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a></code></h3><div class='docblock'><p>Union</p>
+</div><div class='impl-items'><h4 id='assoc_type.Output' class='type'><code>type Output = <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a></code></h4>
+<h4 id='method.bitor' class='method'><code>fn <a href='http://doc.rust-lang.org/nightly/core/ops/trait.BitOr.html#method.bitor' class='fnname'>bitor</a>(self, rhs: <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>) -&gt; <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a></code></h4>
+</div><h3 class='impl'><code>impl&lt;'a&gt; <a class='trait' href='http://doc.rust-lang.org/nightly/core/ops/trait.BitOr.html' title='core::ops::BitOr'>BitOr</a>&lt;&amp;'a <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>&gt; for <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a></code></h3><div class='docblock'><p>Union</p>
+</div><div class='impl-items'><h4 id='assoc_type.Output' class='type'><code>type Output = <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a></code></h4>
+<h4 id='method.bitor' class='method'><code>fn <a href='http://doc.rust-lang.org/nightly/core/ops/trait.BitOr.html#method.bitor' class='fnname'>bitor</a>(self, rhs: &amp;<a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>) -&gt; <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a></code></h4>
+</div><h3 class='impl'><code>impl&lt;'a&gt; <a class='trait' href='http://doc.rust-lang.org/nightly/core/ops/trait.BitOr.html' title='core::ops::BitOr'>BitOr</a>&lt;<a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>&gt; for &amp;'a <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a></code></h3><div class='docblock'><p>Union</p>
+</div><div class='impl-items'><h4 id='assoc_type.Output' class='type'><code>type Output = <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a></code></h4>
+<h4 id='method.bitor' class='method'><code>fn <a href='http://doc.rust-lang.org/nightly/core/ops/trait.BitOr.html#method.bitor' class='fnname'>bitor</a>(self, rhs: <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>) -&gt; <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a></code></h4>
+</div><h3 class='impl'><code>impl&lt;'a&gt; <a class='trait' href='http://doc.rust-lang.org/nightly/core/ops/trait.BitOr.html' title='core::ops::BitOr'>BitOr</a>&lt;&amp;'a <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>&gt; for &amp;'a <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a></code></h3><div class='docblock'><p>Union</p>
+</div><div class='impl-items'><h4 id='assoc_type.Output' class='type'><code>type Output = <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a></code></h4>
+<h4 id='method.bitor' class='method'><code>fn <a href='http://doc.rust-lang.org/nightly/core/ops/trait.BitOr.html#method.bitor' class='fnname'>bitor</a>(self, rhs: &amp;<a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>) -&gt; <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a></code></h4>
+</div><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/hash/trait.Hash.html' title='core::hash::Hash'>Hash</a> for <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a></code></h3><div class='impl-items'><h4 id='method.hash' class='method'><code>fn <a href='http://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash' class='fnname'>hash</a>&lt;__H: <a class='trait' href='http://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html' title='core::hash::Hasher'>Hasher</a>&gt;(&amp;self, __arg_0: &amp;mut __H)</code></h4>
+<h4 id='method.hash_slice' class='method'><code>fn <a href='http://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice' class='fnname'>hash_slice</a>&lt;H&gt;(data: <a href='http://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[Self]</a>, state: &amp;mut H) <span class='where'>where H: <a class='trait' href='http://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html' title='core::hash::Hasher'>Hasher</a></span></code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a></code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='http://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='http://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a></code></h3><div class='impl-items'><h4 id='method.eq' class='method'><code>fn <a href='http://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.ne' class='method'><code>fn <a href='http://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a>) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a></code></h3><div class='impl-items'></div><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a></code></h3><div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='http://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a></code></h4>
+<h4 id='method.clone_from' class='method'><code>fn <a href='http://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../../sdl2/rect/struct.Rect.html' title='sdl2::rect::Rect'>Rect</a></code></h3><div class='impl-items'></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div>
+            <div class="shortcuts">
+                <h1>Keyboard Shortcuts</h1>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h1>Search Tricks</h1>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>typedef</code> (or
+                    <code>tdef</code>).
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "sdl2";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script async src="../../search-index.js"></script>
+</body>
+</html>
